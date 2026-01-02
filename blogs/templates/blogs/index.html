@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Blogs{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blogs/post.css" %}"/>
+<link rel="stylesheet" href="{% static "blogs/index.css" %}"/>
+{% endblock  %}
+
+{% block content %}
+
+    <section id="welcome">
+        <header>
+            <img src="data:image/png;base64,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" alt="photo"/>
+            <h2>
+                My Blogs
+            </h2>
+        </header>
+        <p>This is my blog</p>
+    </section>
+    <section id="latest-post">
+        <h2> My latest post </h2>
+        <ul>
+            {% include "blogs/includes/post.html" %}
+            {% include "blogs/includes/post.html" %}
+            {% include "blogs/includes/post.html" %}
+            {% include "blogs/includes/post.html" %}
+            {% include "blogs/includes/post.html" %}
+            {% include "blogs/includes/post.html" %}
+            {% include "blogs/includes/post.html" %}
+        </ul>
+    </section>
+    <section id="about">
+        <h2> what i do</h2>
+        <p>
+            this is what i do
+        </p>
+        <p>
+            this i do this is the dummy text.
+        </p>
+    </section>
+{% endblock  %}
